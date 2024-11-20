@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:xenial-20210114
 MAINTAINER Ivan Shvedunov <ishvedunov@mirantis.com>
 
 # BUMP 23.11.2018
@@ -28,7 +28,7 @@ RUN git clone https://github.com/libguestfs/libguestfs.git && \
     make -C po-docs update-po -j$(grep -c ^processor /proc/cpuinfo) && \
     make -j$(grep -c ^processor /proc/cpuinfo) install REALLY_INSTALL=yes
 
-FROM ubuntu:16.04
+FROM ubuntu:xenial-20210114
 MAINTAINER Ivan Shvedunov <ishvedunov@mirantis.com>
 
 LABEL virtlet.image="virtlet-base"
